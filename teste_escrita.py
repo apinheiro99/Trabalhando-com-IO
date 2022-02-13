@@ -14,6 +14,6 @@ contatos = ["11,Carol,carol@carol.com.br\n",
 for contato in contatos:
     arquivo_contatos.write(contato)
 
-arquivo_contatos.close()
+arquivo_contatos.flush()
 
 input("Digite qualquer tecla para finalizar")
