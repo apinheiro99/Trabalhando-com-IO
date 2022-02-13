@@ -1,8 +1,17 @@
 import os
 os.system("clear")
 
-arquivo_contatos = open ("contatos-escrita.csv", encoding = "latin_1", mode = "a")
+# arquivo_contatos = open ("contatos-escrita.csv", encoding = "latin_1", mode = "a")
+# contato = "11,carol,carol@carol.com.br\n"
+# arquivo_contatos.write(contato)
 
-contato = "11,carol,carol@carol.com.br\n"
+arquivo_contatos = open ("contatos-escrita.csv", encoding = "latin_1", mode = "w")
+contatos = ["11,Carol,carol@carol.com.br\n",
+            "12,Ana,ana@ana.com.br\n",
+            "13,Tais,tais@tais.com.br\n",
+            "14,Felipe,felipe@felipe.com\n"]
 
-arquivo_contatos.write(contato)
+for contato in contatos:
+    arquivo_contatos.write(contato)
+
+input("Digite qualquer tecla para finalizar")
