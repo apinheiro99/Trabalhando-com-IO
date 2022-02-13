@@ -16,6 +16,9 @@ for contato in contatos:
 
 arquivo_contatos.flush()
 
+arquivo_contatos.seek(28)
+arquivo_contatos.write("12,Ana,ana@ana.com.br\n".upper())
+arquivo_contatos.flush()
 arquivo_contatos.seek(0)
 
 for linha in arquivo_contatos:
