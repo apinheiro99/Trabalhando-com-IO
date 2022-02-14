@@ -7,5 +7,7 @@ try:
         print(linha,end = "")
 except FileNotFoundError:
     print("Arquivo nao encontrado")
+except PermissionError:
+    print("Permissao negada")
 finally:
     arquivo_contatos.close()
