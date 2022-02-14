@@ -30,3 +30,15 @@ def contatos_para_json(contatos, caminho):
 
 def _contato_para_json(contato):
     return contato.__dict__
+
+def json_para_contatos(caminho):
+    contatos = []
+
+    with open(caminho) as arquivo:
+        contatos_json = json.load(arquivo)
+
+    for contato in contatos_json:
+        c = Contato(**contato)
+        contatos.append(c)
+
+    return contatos
