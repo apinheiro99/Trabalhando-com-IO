@@ -1,7 +1,11 @@
 import os
 os.system("clear")
 
-arquivo_contatos = open("contatos.csv", encoding = "latin_1")
-
-for linha in arquivo_contatos:
-    print(linha,end = "")
+try:
+    with open("nao-existe.csv", encoding = "latin_1") as arquivo_contatos:
+        for linha in arquivo_contatos:
+            print(linha,end = "")
+except FileNotFoundError:
+    print("Arquivo nao encontrado")
+except PermissionError:
+    print("Permissao negada")
